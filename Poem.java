@@ -17,13 +17,21 @@ public class Poem {
         for (int i = 0; i < numberOfParagraphs; i++) {
             for (int j = 0; j < numberOfLines; j++) {
                 // first word is from the array of uppercase words
+
+                int randomInitialWord2 = (int) (Math.random() * uppercaseList.length);
+
                 if(numberOfWords > 0) {
-                    int randomInitialWord = (int) (Math.random() * uppercaseList.length);
-                    poem += uppercaseList[randomInitialWord] + " ";
+                    //int randomInitialWord = (int) (Math.random() * uppercaseList.length);
+                    poem += uppercaseList[randomInitialWord2] + " ";
                 }
-                for (int k = 0; k < numberOfWords - 1; k++) {
+                for (int k = 0; k < numberOfWords - 1; k++)
+                {
                     int randomWord = (int) (Math.random() * sourceToWords.length);
-                    poem += sourceToWords[randomWord] + " ";
+
+                    int randomWord2 = randomInitialWord2 + (int) (Math.random() * (sourceToWords.length - randomInitialWord2));
+
+
+                    poem += sourceToWords[randomWord2] + " ";
                 }
                 poem += "\n";
             }
